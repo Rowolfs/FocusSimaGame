@@ -271,8 +271,6 @@
     const frame = document.querySelector("#unity-frame");
     const loadingCard = document.querySelector("#unity-loading-card");
     const warningBanner = document.querySelector("#unity-warning");
-    const focusButton = document.querySelector("#focus-button");
-    const fullscreenButton = document.querySelector("#unity-fullscreen-button");
     const tapCapture = document.querySelector("#tap-capture");
 
     function unityShowBanner(msg, type) {
@@ -347,13 +345,6 @@
         resizeUnityCanvas();
         window.addEventListener("resize", resizeUnityCanvas);
 
-        fullscreenButton.onclick = () => {
-          unityInstance.SetFullscreen(1);
-          setTimeout(() => {
-            resizeUnityCanvas();
-            focusCanvas();
-          }, 300);
-        };
 
         loadingCard.style.display = "none";
         tapCapture.classList.add("hidden");
